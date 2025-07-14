@@ -1,0 +1,18 @@
+@import url('main.css');
+
+.header-logo{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: var(--Neutral800);
+}
+
+.logo-image{
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 20px;
+}

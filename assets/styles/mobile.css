@@ -3,10 +3,15 @@
 .header-logo{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
-    background-color: var(--Neutral800);
+    background-color: var(--Neutral700);
+
+    margin: 20px;
+    padding: 10px;
+
+    border-radius: 20px;
 }
 
 .logo-image{
@@ -14,5 +19,23 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    padding: 20px;
+    width: 160px;
+    height: 36px;
+    padding: 2px;
+}
+
+.switch-light-dark{
+    background-color: var(--Neutral600);
+
+    border-radius: 8px;
+
+    padding: 10px;
+}
+
+.switch{
+    background-image: url('../images/icon-sun.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 8px;
 }

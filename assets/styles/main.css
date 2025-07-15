@@ -32,11 +32,25 @@ body{
     width: 100vw;
     height: 100vh;
 
-    background-color: var(--Neutral900);
+    background: linear-gradient(to bottom, hsl(226, 25%, 17%), hsl(227, 75%, 14%));
+
+    font-family: var(--font);
 }
 
-header{
-    width: 100%;
+.switch-light-dark:hover{
+    cursor: pointer;
+
+    border: 2px solid var(--Red500);
+    transition: 0.5s;
+}
+
+.extension-list{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    margin: 20px;
 }
 
 

@@ -15,13 +15,11 @@
 }
 
 .logo-image{
-    background-image: url('../images/logo.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
     width: 160px;
     height: 36px;
     padding: 2px;
+
+    
 }
 
 .switch-light-dark{

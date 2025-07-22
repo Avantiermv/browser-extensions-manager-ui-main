@@ -29,12 +29,37 @@
 }
 
 body{
-    width: 100vw;
-    height: 100vh;
-
     background: linear-gradient(to bottom, hsl(226, 25%, 17%), hsl(227, 75%, 14%));
 
     font-family: var(--font);
+}
+
+.header-logo{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--Neutral700);
+
+    padding: 10px;
+    margin: 10px;
+
+    border-radius: 20px;
+}
+
+.logo-image{
+    width: 160px;
+    height: 36px;
+    padding: 2px;  
+}
+
+.switch-light-dark{
+    background-color: var(--Neutral600);
+
+    border-radius: 8px;
+
+    padding: 10px;
 }
 
 .switch-light-dark:hover{
@@ -44,6 +69,15 @@ body{
     transition: 0.5s;
 }
 
+.switch-change{
+    background-image: url('../images/icon-sun.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 8px;
+}
+
+
 .list-title{
     color: var(--Neutral0);
 }
@@ -52,7 +86,7 @@ body{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     margin: 20px;
 }
@@ -80,6 +114,75 @@ body{
     background-color: hsla(0, 0%, 93%, 0.177);
     color: var(--Neutral800);
     transition: 0.5s;
+}
+
+.extensions{
+    display: grid;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 5px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.extension{
+    background-color: var(--Neutral700);
+    padding: 10px;
+    margin: 10px;
 }
 
 

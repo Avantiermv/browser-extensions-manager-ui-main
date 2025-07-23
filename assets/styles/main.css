@@ -112,7 +112,7 @@ body{
 .toggles:hover{
   cursor: pointer;
   background-color: hsla(0, 0%, 93%, 0.177);
-  color: var(--Neutral800);
+  color: var(--Neutral900);
   transition: 0.5s;
 
   border-color: var(--Red500);

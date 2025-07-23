@@ -12,7 +12,6 @@
   border-radius: 20px;
 }
 
-
 .extension-content{
     display: flex;
     flex-flow: row nowrap;
@@ -56,8 +55,6 @@
     background-color: var(--Neutral700);
     color: var(--Neutral100);
 }
-
-
 
 .switch {
   position: relative;

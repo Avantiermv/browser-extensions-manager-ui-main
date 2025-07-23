@@ -3,17 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const allExtensions = document.querySelector('.all-ext');
     const inactiveExtensions = document.querySelector('.inactive-ext');
     const activeExtensions = document.querySelector('.active-ext');
-    
-    fetch('assets/script/data.json')
-        .then(response => response.json())
-        .then(extensions => {
+    const switchLightDark = document.querySelector('.switch-light-dark');
+    const switchActiveDesactive = document.querySelector('.check-inactive-active');
 
-            extensions.forEach(extension => {
-                
-            })
+    async function takeExtension(url) {
+        try{
+            const response = await fetch(url);
+            const data = await response.json();
 
-        })
-        .catch(e => {
-            console.error("Error", e.status);
-        });
+            data.forEach(extension => {
+                if(extension.isActive === true){
+                    switchActiveDesactive.checked = true;
+                }
+            });
+        }catch(e){
+            console.error("Error:", e.message);
+        }
+    }
+    takeExtension('assets/script/data.json');
+
+
+    function createElements(logo, title, description){
+
+    }
 })

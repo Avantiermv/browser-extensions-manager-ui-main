@@ -1,2 +1,6 @@
 @import url('main.css');
 
+.change-background{
+    background-color: var(--Red700);
+    color: var(--Neutral900);
+}

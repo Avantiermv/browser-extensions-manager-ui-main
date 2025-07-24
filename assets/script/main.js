@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const allExtensions = document.querySelector('.all-ext');
-    const inactiveExtensions = document.querySelector('.inactive-ext');
-    const activeExtensions = document.querySelector('.active-ext');
+    const toggles = document.querySelectorAll('.toggles');
     const switchLightDark = document.querySelector('.switch-light-dark'); 
     const extensionsdiv = document.querySelector('.extensions');
 
@@ -11,15 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(url);
             const data = await response.json();
 
+            console.log("Tamanho do json: ", data.length);
+
             data.forEach(extension => {
-
-
                 createElements(extension);
-
-                if(extension.isActive === true){
-                    const switchActiveDesactive = document.querySelector(`#inactiveActive-${extension.name}`);
-                    switchActiveDesactive.checked = true;
-                }
             });
 
         }catch(e){
@@ -28,10 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     takeExtension('assets/script/data.json');
 
-    function teste2(){
-        
+    function trackSwitch(extension){
+        if(!extension.isActive){
+            console.log("Não estava ligado mas agora está");
+            extension.isActive = true;
+
+        }else{
+            console.log("Estava ligado, mas agora não está");
+            extension.isActive = false;
+        }
     }
 
+    function teste3(){
+        toggles.addEventListener('click', () => {
+            if(toggles.classList.contains('all-ext')){
+                console.log("All");
+            }else if(toggles.classList.contains('active-ext')){
+                console.log("Active");
+            }else{
+                console.log("Inactive");
+            }
+        });
+    }
+    teste3();
+    
     function createElements(extension){
         const extensionDiv = document.createElement('div');
         extensionDiv.classList.add('extension');
@@ -70,6 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputCheckbox = document.createElement('input');
         inputCheckbox.type = 'checkbox';
         inputCheckbox.id = `inactiveActive-${extension.name}`;
+
+        if(extension.isActive === true){
+            inputCheckbox.checked = true;
+        }
+
+        inputCheckbox.addEventListener('click', () => {
+            trackSwitch(extension);
+        });
+
         const spanSlider = document.createElement('span');
         spanSlider.classList.add('slider', 'round');
         labelSwitch.appendChild(inputCheckbox);

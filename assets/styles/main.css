@@ -102,11 +102,6 @@ body{
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
-
-  border: solid 1px var(--Neutral600);
-  border-radius: 20px;
-
-  color: var(--Neutral300);
 }
 
 .toggles:hover{
@@ -117,3 +112,11 @@ body{
 
   border-color: var(--Red500);
 }
+
+.colors{
+  border: solid 1px var(--Neutral600);
+  border-radius: 20px;
+
+  color: var(--Neutral300);
+}
+

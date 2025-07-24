@@ -3,4 +3,5 @@
 .change-background{
     background-color: var(--Red700);
     color: var(--Neutral900);
+    transition: 0.2s;
 }

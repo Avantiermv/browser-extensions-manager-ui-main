@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const toggles = document.querySelectorAll('.toggles');
+    const allExtensionToggle = document.querySelector('#all-ext');
+    const activeExtensionToggle = document.querySelector('#active-ext');
+    const inactiveExtensionToggle = document.querySelector('#inactive-ext');
     const switchLightDark = document.querySelector('.switch-light-dark'); 
     const extensionsdiv = document.querySelector('.extensions');
 
@@ -8,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         try{
             const response = await fetch(url);
             const data = await response.json();
-
-            console.log("Tamanho do json: ", data.length);
 
             data.forEach(extension => {
                 createElements(extension);
@@ -25,25 +25,39 @@ document.addEventListener('DOMContentLoaded', () => {
         if(!extension.isActive){
             console.log("Não estava ligado mas agora está");
             extension.isActive = true;
-
         }else{
             console.log("Estava ligado, mas agora não está");
             extension.isActive = false;
         }
     }
 
-    function teste3(){
-        toggles.addEventListener('click', () => {
-            if(toggles.classList.contains('all-ext')){
-                console.log("All");
-            }else if(toggles.classList.contains('active-ext')){
-                console.log("Active");
-            }else{
-                console.log("Inactive");
-            }
+    function changeExtensions(){
+        allExtensionToggle.addEventListener('click', () => {
+            resetAll();
+            allExtensionToggle.classList.add('change-background');
+            allExtensionToggle.classList.remove('colors');
+        });
+
+        activeExtensionToggle.addEventListener('click', () => {
+            resetAll();
+            activeExtensionToggle.classList.add('change-background');
+            activeExtensionToggle.classList.remove('colors');
+        });
+
+        inactiveExtensionToggle.addEventListener('click', () => {
+            resetAll();
+            inactiveExtensionToggle.classList.add('change-background');
+            inactiveExtensionToggle.classList.remove('colors');
         });
     }
-    teste3();
+    changeExtensions();
+
+    function resetAll(){
+        [allExtensionToggle, activeExtensionToggle, inactiveExtensionToggle].forEach(e => {
+            e.classList.remove('change-backgroun');
+            e.classList.add('colors');
+        });
+    }
     
     function createElements(extension){
         const extensionDiv = document.createElement('div');

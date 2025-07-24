@@ -102,21 +102,23 @@ body{
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  border-radius: 20px;
 }
 
-.toggles:hover{
+.colors{
+  border: solid 1px var(--Neutral600);
+  background-color: hsla(0, 0%, 93%, 0.341);
+  color: var(--Neutral300);
+}
+
+.colors:hover{
   cursor: pointer;
   background-color: hsla(0, 0%, 93%, 0.177);
-  color: var(--Neutral900);
+  color: var(--Neutral100);
   transition: 0.5s;
 
   border-color: var(--Red500);
 }
 
-.colors{
-  border: solid 1px var(--Neutral600);
-  border-radius: 20px;
 
-  color: var(--Neutral300);
-}
 

@@ -97,27 +97,30 @@ body{
   align-items: center;
 }
 
-.toggles{
+button.toggles{
   margin: 10px;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 20px;
+
+  font-family: var(--font);
+  font-size: 16px;
 }
 
-.colors{
+button.colors{
   border: solid 1px var(--Neutral600);
   background-color: hsla(0, 0%, 93%, 0.341);
   color: var(--Neutral300);
 }
 
-.colors:hover{
+button.colors:hover{
   cursor: pointer;
   background-color: hsla(0, 0%, 93%, 0.177);
   color: var(--Neutral100);
   transition: 0.5s;
 
-  border-color: var(--Red500);
+  border: 1px solid var(--Red500);
 }
 
 

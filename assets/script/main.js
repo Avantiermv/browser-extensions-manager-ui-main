@@ -99,23 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function changeExtensions(){
-        allExtensionToggle.addEventListener('click', () => {
-            resetAll();
+        if(activeExtensionToggle.disabled === false){
+            allExtensionToggle.disabled = true;
             allExtensionToggle.classList.add('change-background');
             allExtensionToggle.classList.remove('colors');
-        });
 
-        activeExtensionToggle.addEventListener('click', () => {
-            resetAll();
-            activeExtensionToggle.classList.add('change-background');
-            activeExtensionToggle.classList.remove('colors');
-        });
+            activeExtensionToggle.addEventListener('click', () => {
+                resetAll();
+                activeExtensionToggle.classList.add('change-background');
+                activeExtensionToggle.classList.remove('colors');
+            });
 
-        inactiveExtensionToggle.addEventListener('click', () => {
-            resetAll();
-            inactiveExtensionToggle.classList.add('change-background');
-            inactiveExtensionToggle.classList.remove('colors');
-        });
+            inactiveExtensionToggle.addEventListener('click', () => {
+                resetAll();
+                inactiveExtensionToggle.classList.add('change-background');
+                inactiveExtensionToggle.classList.remove('colors');
+            });
+        }
+
+        
     }
     changeExtensions();
 
@@ -128,8 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function remove(extension){
         extension.style.display = 'none';
+        extension.isActive = false;
     }
-
-
 
 });

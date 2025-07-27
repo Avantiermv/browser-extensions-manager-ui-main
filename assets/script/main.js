@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const switchLightDark = document.querySelector('.switch-light-dark'); 
     const extensionsdiv = document.querySelector('.extensions');
 
+    let inactiveExtensions = [];
+    let activeExtensions = [];
+    let allExtensions = [];
+
     async function takeExtension(url) {
         try{
             const response = await fetch(url);
@@ -13,7 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             data.forEach(extension => {
                 createElements(extension);
+                allExtensions.push(extension);
+
+                if(extension.isActive === false){
+                    inactiveExtensions.push(extension);
+                }else{
+                    activeExtensions.push(extension);
+                }
             });
+            console.log(allExtensions);
+            console.log(inactiveExtensions);
+            console.log(activeExtensions);
 
         }catch(e){
             console.error("Error:", e.message);
@@ -56,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonRemove.classList.add('extension-remove', 'toggles');
         buttonRemove.innerText = "Remove";
         buttonRemove.addEventListener('click', () => {
-            remove(extensionDiv);
-        })
+            remove(extensionDiv, extension);
+        });
 
         const labelSwitch = document.createElement('label');
         labelSwitch.classList.add('switch');
@@ -90,10 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function trackSwitch(extension){
         if(!extension.isActive){
-            console.log("Não estava ligado mas agora está");
             extension.isActive = true;
         }else{
-            console.log("Estava ligado, mas agora não está");
             extension.isActive = false;
         }
     }
@@ -103,21 +115,24 @@ document.addEventListener('DOMContentLoaded', () => {
             allExtensionToggle.disabled = true;
             allExtensionToggle.classList.add('change-background');
             allExtensionToggle.classList.remove('colors');
-
-            activeExtensionToggle.addEventListener('click', () => {
-                resetAll();
-                activeExtensionToggle.classList.add('change-background');
-                activeExtensionToggle.classList.remove('colors');
-            });
-
-            inactiveExtensionToggle.addEventListener('click', () => {
-                resetAll();
-                inactiveExtensionToggle.classList.add('change-background');
-                inactiveExtensionToggle.classList.remove('colors');
-            });
         }
 
-        
+        // allExtensionToggle.addEventListener('click', () => {
+        //     resetAll();
+        //     allExtensionToggle.classList.add('change-background');
+        //     allExtensionToggle.classList.remove('colors');
+        // });
+        // activeExtensionToggle.addEventListener('click', () => {
+        //     resetAll();
+        //     activeExtensionToggle.classList.add('change-background');
+        //     activeExtensionToggle.classList.remove('colors');
+        // });
+
+        // inactiveExtensionToggle.addEventListener('click', () => {
+        //     resetAll();
+        //     inactiveExtensionToggle.classList.add('change-background');
+        //     inactiveExtensionToggle.classList.remove('colors');
+        // });
     }
     changeExtensions();
 
@@ -128,9 +143,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function remove(extension){
-        extension.style.display = 'none';
+    function remove(extensionDiv, extension){
+        extensionDiv.style.display = 'none';
         extension.isActive = false;
     }
 
+    // function pushExtensions(extension){
+    //     if(extension.isActive === false){
+    //         inactiveExtensions.push(extension);
+    //         activeExtensions.pop(extension);
+    //         console.log("inativas: ",inactiveExtensions);
+    //         console.log("Ativas: ", activeExtensions);
+    //     }else if(extension.isActive === true){
+    //         activeExtensions.push(extension);
+    //         inactiveExtensions.pop(extension);
+    //         console.log("Ativas: ", activeExtensions);
+    //         console.log("inativas: ",inactiveExtensions);
+    //     }
+    // } ARRUMAR!!
 });

@@ -25,10 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     activeExtensions.push(extension);
                 }
             });
-            console.log(allExtensions);
-            console.log(inactiveExtensions);
-            console.log(activeExtensions);
-
         }catch(e){
             console.error("Error:", e.message);
         }
@@ -105,60 +101,76 @@ document.addEventListener('DOMContentLoaded', () => {
     function trackSwitch(extension){
         if(!extension.isActive){
             extension.isActive = true;
+            pushExtensions(extension);
         }else{
             extension.isActive = false;
+            pushExtensions(extension);
         }
-    }
-
-    function changeExtensions(){
-        if(activeExtensionToggle.disabled === false){
-            allExtensionToggle.disabled = true;
-            allExtensionToggle.classList.add('change-background');
-            allExtensionToggle.classList.remove('colors');
-        }
-
-        // allExtensionToggle.addEventListener('click', () => {
-        //     resetAll();
-        //     allExtensionToggle.classList.add('change-background');
-        //     allExtensionToggle.classList.remove('colors');
-        // });
-        // activeExtensionToggle.addEventListener('click', () => {
-        //     resetAll();
-        //     activeExtensionToggle.classList.add('change-background');
-        //     activeExtensionToggle.classList.remove('colors');
-        // });
-
-        // inactiveExtensionToggle.addEventListener('click', () => {
-        //     resetAll();
-        //     inactiveExtensionToggle.classList.add('change-background');
-        //     inactiveExtensionToggle.classList.remove('colors');
-        // });
-    }
-    changeExtensions();
-
-    function resetAll(){
-        [allExtensionToggle, activeExtensionToggle, inactiveExtensionToggle].forEach(e => {
-            e.classList.remove('change-backgroun');
-            e.classList.add('colors');
-        });
     }
 
     function remove(extensionDiv, extension){
         extensionDiv.style.display = 'none';
         extension.isActive = false;
+        pushExtensions(extension);
     }
 
-    // function pushExtensions(extension){
-    //     if(extension.isActive === false){
-    //         inactiveExtensions.push(extension);
-    //         activeExtensions.pop(extension);
-    //         console.log("inativas: ",inactiveExtensions);
-    //         console.log("Ativas: ", activeExtensions);
-    //     }else if(extension.isActive === true){
-    //         activeExtensions.push(extension);
-    //         inactiveExtensions.pop(extension);
-    //         console.log("Ativas: ", activeExtensions);
-    //         console.log("inativas: ",inactiveExtensions);
-    //     }
-    // } ARRUMAR!!
+    function pushExtensions(extension){
+
+        inactiveExtensions = inactiveExtensions.filter(ext => ext.name !== extension.name);
+        activeExtensions = activeExtensions.filter(ext => ext.name !== extension.name);
+
+        if(extension.isActive === false){
+            inactiveExtensions.push(extension);
+        } 
+        if(extension.isActive === true){
+            activeExtensions.push(extension);
+        }
+    } 
+    
+    function showAll(){
+        allExtensionToggle.classList.remove('colors');
+        allExtensionToggle.classList.add('change-background');
+        allExtensionToggle.addEventListener('click', () => {
+            resetAll();
+            apllyStyleToggles(allExtensionToggle);
+            
+        });
+    }
+    showAll();
+
+    function showActives(){
+        activeExtensionToggle.addEventListener('click', () => {
+            resetAll();
+            apllyStyleToggles(activeExtensionToggle);
+            
+        })
+    }
+    showActives();
+
+    function showInactives(){
+        inactiveExtensionToggle.addEventListener('click', () => {
+            resetAll();
+            apllyStyleToggles(inactiveExtensionToggle);
+            
+        })
+    }
+    showInactives();
+
+    function apllyStyleToggles(element){
+        element.classList.add('change-background');
+        element.classList.remove('colors');
+    }
+
+    function resetAll(){
+        [allExtensionToggle, activeExtensionToggle, inactiveExtensionToggle].forEach(element => {
+            element.classList.remove('change-background');
+            element.classList.add('colors');
+        });
+    }
+
+    function toggleVisibility(extensions){
+        
+    }
+
+
 });

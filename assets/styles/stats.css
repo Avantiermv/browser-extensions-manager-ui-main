@@ -1,9 +1,28 @@
 @import url('main.css');
 
-.change-background{
+.change-toggle-style{
     background-color: var(--Red700);
     color: var(--Neutral900);
     transition: 0.2s;
 
     border: solid 1px var(--Red700);
 }
+
+.change-background-body{
+    background-color: var(--Neutral200);
+    font-family: var(--font);
+}
+
+.change-background-cards{
+    background-color: var(--Neutral0);
+}
+
+.change-cards-h1-color{
+    color: var(--Neutral900);
+}
+
+.change-cards-p-color{
+    color: var(--Neutral800);
+}
+
+

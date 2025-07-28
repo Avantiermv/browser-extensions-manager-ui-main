@@ -28,10 +28,10 @@
     --DarkGradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
 
-body{
-    background: linear-gradient(to bottom, hsl(226, 25%, 17%), hsl(227, 75%, 14%));
+.body-background{
+  background: linear-gradient(to bottom, hsl(226, 25%, 17%), hsl(227, 75%, 14%));
 
-    font-family: var(--font);
+  font-family: var(--font);
 }
 
 .header-logo{
@@ -42,7 +42,7 @@ body{
 
   background-color: var(--Neutral700);
 
-  padding: 10px;
+  padding: 15px;
   margin: 10px;
 
   border-radius: 20px;
@@ -51,31 +51,27 @@ body{
 .logo-image{
   width: 160px;
   height: 36px;
-  padding: 2px;  
+  padding: 3px;  
 }
 
 .switch-light-dark{
   background-color: var(--Neutral600);
-
   border-radius: 8px;
-
-  padding: 10px;
+  padding: 3px;
 }
 
+.switch-change{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
 .switch-light-dark:hover{
   cursor: pointer;
 
   background-color: hsla(0, 0%, 93%, 0.485);
   transition: 0.5s;
   border: solid 1px var(--Red500);
-}
-
-.switch-change{
-  background-image: url('../images/icon-sun.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  padding: 8px;
 }
 
 .list-title{

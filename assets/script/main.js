@@ -3,11 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const allExtensionToggle = document.querySelector('#all-ext');
     const activeExtensionToggle = document.querySelector('#active-ext');
     const inactiveExtensionToggle = document.querySelector('#inactive-ext');
-
     const toggles = document.querySelectorAll('.toggles');
-
     const switchLightDark = document.querySelector('.switch-light-dark'); 
     const extensionsdiv = document.querySelector('.extensions');
+
+    const imgSwitch = document.querySelector('.img-switch');
+    const body = document.body;
 
     let inactiveExtensions = [];
     let activeExtensions = [];
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonRemove.classList.add('extension-remove', 'toggles');
         buttonRemove.innerText = "Remove";
         buttonRemove.addEventListener('click', () => {
-            remove(extensionDiv, extension);
+            remove(extension, extensionDiv);
         });
 
         const labelSwitch = document.createElement('label');
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         inputCheckbox.addEventListener('click', () => {
-            trackSwitch(extension);
+            trackSwitch(extension, extensionDiv);
         });
 
         const spanSlider = document.createElement('span');
@@ -105,19 +106,24 @@ document.addEventListener('DOMContentLoaded', () => {
         extensionsdiv.appendChild(extensionDiv);
 
         allExtensionsElements.push(extensionDiv);
-    }
-
-    function trackSwitch(extension){
-        if(!extension.isActive){
-            extension.isActive = true;
-            pushExtensions(extension);
+        if(extension.isActive){
+            activeExtensionsElements.push(extensionDiv);
         }else{
-            extension.isActive = false;
-            pushExtensions(extension);
+            inactiveExtensionsElements.push(extensionDiv);
         }
     }
 
-    function remove(extensionDiv, extension){
+    function trackSwitch(extension, extensionDiv){
+        if(!extension.isActive){
+            extension.isActive = true;
+            pushExtensions(extension, extensionDiv);
+        }else{
+            extension.isActive = false;
+            pushExtensions(extension, extensionDiv);
+        }
+    }
+
+    function remove(extension, extensionDiv){
         extensionDiv.style.display = 'none';
         extension.isActive = false;
         pushExtensions(extension, extensionDiv);
@@ -127,21 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         inactiveExtensions = inactiveExtensions.filter(ext => ext.name !== extension.name);
         activeExtensions = activeExtensions.filter(ext => ext.name !== extension.name);
+        inactiveExtensionsElements = inactiveExtensionsElements.filter(element => element !== extensionDiv);
+        activeExtensionsElements = activeExtensionsElements.filter(element => element !== extensionDiv);
 
-        if(extension.isActive === false){
+        if(extension.isActive){
+            activeExtensions.push(extension);
+            activeExtensionsElements.push(extensionDiv);
+        }else{
             inactiveExtensions.push(extension);
             inactiveExtensionsElements.push(extensionDiv);
-        } 
-        if(extension.isActive === true){
-            activeExtensions.push(extension);
         }
     } 
 
     function showToggles(){
         allExtensionToggle.classList.remove('colors');
-        allExtensionToggle.classList.add('change-background');
+        allExtensionToggle.classList.add('change-toggle-style');
         toggles.forEach(toggle => {
-            toggle.addEventListener('click', (event) => {
+            toggle.addEventListener('click', () => {
                 resetAll();
                 apllyStyleToggles(toggle);
                 
@@ -162,26 +170,62 @@ document.addEventListener('DOMContentLoaded', () => {
     showToggles();
 
     function apllyStyleToggles(element){
-        element.classList.add('change-background');
+        element.classList.add('change-toggle-style');
         element.classList.remove('colors');
     }
 
     function resetAll(){
         [allExtensionToggle, activeExtensionToggle, inactiveExtensionToggle].forEach(element => {
-            element.classList.remove('change-background');
+            element.classList.remove('change-toggle-style');
             element.classList.add('colors');
         });
     }
 
     function showAll(){
-        
+        activeExtensionsElements.forEach((ext) => {
+            ext.style.display = 'none';
+        });
+        inactiveExtensionsElements.forEach((ext) => {
+            ext.style.display = 'none';
+        });
+        allExtensionsElements.forEach((ext) => {
+            ext.style.display = 'block';
+        });
     }
 
     function showActives(){
-        
+        allExtensionsElements.forEach((ext) => {
+            ext.style.display = 'none';
+        });
+        activeExtensionsElements.forEach((ext) => {
+            ext.style.display = 'block';
+        });
+        inactiveExtensionsElements.forEach((ext) => {
+            ext.style.display = 'none';
+        });
     }
 
     function showInactives(){
-        
+        allExtensionsElements.forEach((ext) => {
+            ext.style.display = 'none';
+        });
+        inactiveExtensionsElements.forEach((ext) => {
+            ext.style.display = 'block';
+        });
+        activeExtensionsElements.forEach((ext) => {
+            ext.style.display = 'none';
+        });
     }
+
+    switchLightDark.addEventListener('click', () => {
+        const showingMoon = imgSwitch.src.includes('icon-moon.svg');
+        imgSwitch.src = showingMoon ? 'assets/images/icon-sun.svg' : 'assets/images/icon-moon.svg';
+        if(!showingMoon){
+            body.classList.remove('body-background');
+            body.classList.add('change-background-body');
+        }else{
+            body.classList.remove('change-background-body');
+            body.classList.add('body-background');
+        }
+    });
 });

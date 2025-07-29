@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createElements(extension){
         const extensionDiv = document.createElement('div');
-        extensionDiv.classList.add('extension');
+        extensionDiv.classList.add('extension', 'extension-dark');
         extensionDiv.id = `divExtension`;
 
         const extensionContent = document.createElement('div');
@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
         divText.classList.add('extension-text');
         const divh2 = document.createElement('h2');
         divh2.innerText = extension.name;
-        divh2.classList.add('extension-title');
+        divh2.classList.add('extension-title', 'extension-title-dark');
         const divp = document.createElement('p');
         divp.innerText = extension.description;
-        divp.classList.add('extension-info');
+        divp.classList.add('extension-info', 'extension-info-dark');
         divText.appendChild(divh2);
         divText.appendChild(divp);
 
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         extensionActions.classList.add('extension-actions');
 
         const buttonRemove = document.createElement('button');
-        buttonRemove.classList.add('extension-remove', 'toggles');
+        buttonRemove.classList.add('extension-remove', 'toggles', 'extension-remove-dark');
         buttonRemove.innerText = "Remove";
         buttonRemove.addEventListener('click', () => {
             remove(extension, extensionDiv);
@@ -218,14 +218,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     switchLightDark.addEventListener('click', () => {
+        changeToDarkLight();
+    });
+
+    function changeToDarkLight(){
         const showingMoon = imgSwitch.src.includes('icon-moon.svg');
+        const extensionsCards = document.querySelectorAll('.extension');
+        const extensionRemoveButton = document.querySelectorAll('.extension-remove');
+        const titleCards = document.querySelectorAll('.extension-title');
+        const paragraphCards = document.querySelectorAll('.extension-info');
+        const header = document.querySelector('.header-logo-dark');
+        const listTitle = document.querySelector('.list-title');
+        
+
         imgSwitch.src = showingMoon ? 'assets/images/icon-sun.svg' : 'assets/images/icon-moon.svg';
         if(!showingMoon){
             body.classList.remove('body-background');
-            body.classList.add('change-background-body');
+            body.classList.add('background-body-light');
+            header.classList.remove('header-logo-dark');
+            header.classList.add('header-logo-light');
+            listTitle.classList.remove('list-title');
+            listTitle.classList.add('list-title-light');
+            extensionsCards.forEach((extension) => {
+                extension.classList.remove('extension-dark');
+                extension.classList.add('background-cards-light');
+            });
+            extensionRemoveButton.forEach((buttonRemove) => {
+                buttonRemove.classList.remove('extension-remove-dark');
+                buttonRemove.classList.add('button-remove-light');
+            });
+            titleCards.forEach((title) => {
+                title.classList.remove('extension-title-dark');
+                title.classList.add('extension-title-light');
+            });
+            paragraphCards.forEach((info) => {
+                info.classList.remove('extension-info-dark');
+                info.classList.add('extension-info-light');
+            });
+            
         }else{
             body.classList.remove('change-background-body');
             body.classList.add('body-background');
         }
-    });
+    }
 });

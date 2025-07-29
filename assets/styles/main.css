@@ -39,13 +39,14 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-
-  background-color: var(--Neutral700);
-
   padding: 15px;
   margin: 10px;
 
   border-radius: 20px;
+}
+
+.header-logo-dark{
+  background-color: var(--Neutral700);
 }
 
 .logo-image{

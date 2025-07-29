@@ -5,11 +5,14 @@
 }
 
 .extension{
-  background-color: var(--Neutral700);
   padding: 10px;
   margin: 10px;
 
   border-radius: 20px;
+}
+
+.extension-dark{
+  background-color: var(--Neutral700);
 }
 
 .extension-content{
@@ -22,15 +25,17 @@
     margin: 10px;
 }
 
-.extension-title{
+.extension-title-dark{
     color: var(--Neutral0);
 }
 
 .extension-info{
-    color: var(--Neutral100);
-
     font-size: 16px;
     font-weight: 300;
+}
+
+.extension-info-dark{
+  color: var(--Neutral100);
 }
 
 .extension-actions{
@@ -51,9 +56,18 @@
 
     border-radius: 15px;
     border: solid 0.1em var(--Neutral100);
+}
 
-    background-color: var(--Neutral700);
-    color: var(--Neutral100);
+.extension-remove-dark{
+  background-color: var(--Neutral700);
+  color: var(--Neutral100);
+}
+
+.extension-remove:hover{
+  cursor: pointer;
+  border: 1px solid var(--Red500);
+  transition: 0.3s;
+  color: var(--Red500);
 }
 
 .switch {

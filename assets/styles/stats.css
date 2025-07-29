@@ -1,5 +1,13 @@
 @import url('main.css');
 
+.header-logo-light{
+    background-color: var(--Neutral0);
+}
+
+.list-title-light{
+    color: var(--Neutral900);
+}
+
 .change-toggle-style{
     background-color: var(--Red700);
     color: var(--Neutral900);
@@ -8,21 +16,24 @@
     border: solid 1px var(--Red700);
 }
 
-.change-background-body{
+.background-body-light{
     background-color: var(--Neutral200);
     font-family: var(--font);
 }
 
-.change-background-cards{
+.background-cards-light{
     background-color: var(--Neutral0);
 }
 
-.change-cards-h1-color{
+.cards-h1-color-light{
     color: var(--Neutral900);
 }
 
-.change-cards-p-color{
+.cards-p-color-light{
     color: var(--Neutral800);
 }
 
+.button-remove-light{
+    background-color: var(--Neutral100);
+}
 

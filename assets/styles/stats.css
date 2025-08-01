@@ -8,6 +8,10 @@
     color: var(--Neutral900);
 }
 
+.switch-light-dark-change{
+  background-color: var(--Neutral100);
+}
+
 .change-toggle-style{
     background-color: var(--Red700);
     color: var(--Neutral900);

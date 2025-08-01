@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeExtensionToggle = document.querySelector('#active-ext');
     const inactiveExtensionToggle = document.querySelector('#inactive-ext');
     const toggles = document.querySelectorAll('.toggles');
-    const switchLightDark = document.querySelector('.switch-light-dark'); 
+    const switchLightDark = document.querySelector('.switch-dark-light'); 
     const extensionsdiv = document.querySelector('.extensions');
 
     const imgSwitch = document.querySelector('.img-switch');
@@ -230,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const header = document.querySelector('.header-logo-dark');
         const listTitle = document.querySelector('.list-title');
         
+        
 
         imgSwitch.src = showingMoon ? 'assets/images/icon-sun.svg' : 'assets/images/icon-moon.svg';
         if(!showingMoon){
@@ -239,6 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.add('header-logo-light');
             listTitle.classList.remove('list-title');
             listTitle.classList.add('list-title-light');
+            switchLightDark.classList.remove('switch-dark-light-change');
+            switchLightDark.classList.add('switch-light-dark-change');
             extensionsCards.forEach((extension) => {
                 extension.classList.remove('extension-dark');
                 extension.classList.add('background-cards-light');

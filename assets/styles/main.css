@@ -55,10 +55,13 @@
   padding: 3px;  
 }
 
-.switch-light-dark{
-  background-color: var(--Neutral600);
+.switch-dark-light{
   border-radius: 8px;
   padding: 3px;
+}
+
+.switch-dark-light-change{
+  background-color: var(--Neutral600);
 }
 
 .switch-change{
@@ -67,7 +70,7 @@
   justify-content: center;
   padding: 5px;
 }
-.switch-light-dark:hover{
+.switch-dark-light:hover{
   cursor: pointer;
 
   background-color: hsla(0, 0%, 93%, 0.485);

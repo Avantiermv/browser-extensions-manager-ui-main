@@ -4,3 +4,6 @@
     background: var(--DarkGradient);
 }
 
+.switch-dark-light-when-dark{
+    background-color: var(--Neutral600);
+}

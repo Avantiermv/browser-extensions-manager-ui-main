@@ -32,7 +32,6 @@ Users should be able to:
 ![](./screenshot.jpg)
 
 
-
 ### Links
 
 - Solution URL: [Solution Site](https://your-solution-url.com)

@@ -1,2 +1,6 @@
 @import url('main.css');
 
+.background-dark{
+    background: var(--DarkGradient);
+}
+

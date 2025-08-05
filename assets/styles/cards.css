@@ -1,1 +1,43 @@
 @import url('main.css');
+
+.card{
+    background-color: hsl(225, 23%, 24%); /*mudar para o dark depois*/
+
+    padding: 5px;
+    margin: 10px;
+
+    border-radius: 15px;
+}
+
+.main-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 5px;
+}
+
+.extension-icon-image, .extension-info{
+    margin: 5px;
+}
+
+.extension-action-toggles{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+}
+
+.extension-remove{
+    width: 80px;
+    padding: 8px;
+
+    border-radius: 12px;
+    border: solid 1px var(--Neutral600);
+
+    background-color: hsl(225, 23%, 24%);
+    color: var(--Neutral0);
+    font-family: var(--font);
+}
+

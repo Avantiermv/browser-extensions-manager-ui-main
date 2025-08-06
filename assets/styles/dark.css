@@ -1,9 +1,52 @@
 @import url('main.css');
 
+/* BODY */
 .background-dark{
     background: var(--DarkGradient);
+}
+
+
+/* header */
+.header-dark{
+    background-color: var(--Neutral700);
 }
 
 .switch-dark-light-when-dark{
     background-color: var(--Neutral600);
 }
+
+/* list change */
+.h1-dark{
+    color: var(--Neutral0);
+}
+
+.toggles-buttons-dark{
+    background-color: var(--Neutral700);
+    color: var(--Neutral0);
+
+    border: solid 1px var(--Neutral600);
+}
+
+
+/* CARDS */
+.card-dark{
+    background-color: hsl(225, 23%, 24%); 
+}
+
+.h2-dark{
+    color: var(--Neutral0);
+}
+
+.p-dark{
+    color: var(--Neutral100);
+}
+
+.button-remove-dark{
+    background-color: var(--Neutral700);
+    color: var(--Neutral0);
+
+    border: solid 1px var(--Neutral0);
+}
+      
+
+

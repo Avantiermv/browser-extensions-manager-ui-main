@@ -34,10 +34,5 @@
     padding: 8px;
 
     border-radius: 12px;
-    border: solid 1px var(--Neutral600);
-
-    background-color: hsl(225, 23%, 24%);
-    color: var(--Neutral0);
-    font-family: var(--font);
 }
 

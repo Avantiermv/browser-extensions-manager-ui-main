@@ -25,12 +25,15 @@
   </header>
 
   <main>
-    <div class="extension-list">
+    <div class="extension-list-actives">
       <h1 class="extension-list-title">Extension list</h1>
       <div class="extension-list-toggles">
-        <button>All</button>
-        <button>Active</button>
-        <button>Inactive</button>
+        <label for="All" class="identifier">All</label>
+        <input type="checkbox" name="All" id="">
+        <label for="Active" class="identifier">Active</label>
+        <input type="checkbox" name="Active" id="">
+        <label for="Inactive" class="identifier">Inactive</label>
+        <input type="checkbox" name="Inactive" id="">
       </div>
     </div>
 
@@ -56,6 +59,6 @@
     </div>
   </main>
 
-  <script src="assets/scripts/main.js"></script>
+  <script type="module"  src="assets/scripts/main.js"></script>
 </body>
 </html>

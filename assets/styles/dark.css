@@ -5,7 +5,6 @@
     background: var(--DarkGradient);
 }
 
-
 /* header */
 .header-dark{
     background-color: var(--Neutral700);
@@ -20,17 +19,15 @@
     color: var(--Neutral0);
 }
 
-.toggles-buttons-dark{
-    background-color: var(--Neutral700);
+.identifier-dark{
+    background-color: var(--Neutral800); 
     color: var(--Neutral0);
-
-    border: solid 1px var(--Neutral600);
+    border: solid 1px var(--Neutral700);
 }
-
 
 /* CARDS */
 .card-dark{
-    background-color: hsl(225, 23%, 24%); 
+    background-color: var(--Neutral800); 
 }
 
 .h2-dark{

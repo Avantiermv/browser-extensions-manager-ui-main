@@ -1,8 +1,6 @@
 @import url('main.css');
 
 .card{
-    background-color: hsl(225, 23%, 24%); /*mudar para o dark depois*/
-
     padding: 5px;
     margin: 10px;
 

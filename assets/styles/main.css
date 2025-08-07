@@ -30,6 +30,7 @@
 
 body{
   font-family: var(--font);
+  height: 100vh;
 }
 
 /* Header */
@@ -44,6 +45,12 @@ body{
   border-radius: 15px;
 }
 
+.logo-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .switch-dark-light{
   display: flex;
   align-items: center;
@@ -52,6 +59,13 @@ body{
   padding: 10px;
 
   border-radius: 10px;
+}
+
+.switch-dark-light:hover{
+  background-color: hsla(227, 14%, 55%, 0.267);
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
 /* active, inactive, all */
@@ -88,6 +102,8 @@ input[type="checkbox"]{
   font-weight: bold;
 
   transition: 0.5s;
+
+  cursor: pointer;
 }
 
 .extensions{

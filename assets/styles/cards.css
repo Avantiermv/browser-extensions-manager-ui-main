@@ -19,6 +19,20 @@
     margin: 5px;
 }
 
+.extension-name{
+    font-size: 18px;
+    font-weight: 600;
+
+    padding: 2px;
+}
+
+.extension-description{
+    font-size: 16px;
+    font-weight: 300;
+    
+    padding: 2px;
+}
+
 .extension-action-toggles{
     display: flex;
     align-items: center;
@@ -32,5 +46,12 @@
     padding: 8px;
 
     border-radius: 12px;
+}
+
+.extension-remove:hover{
+    background-color: var(--Neutral600);
+
+    cursor: pointer;
+    transition: 0.3s;
 }
 

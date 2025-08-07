@@ -4,6 +4,9 @@ const switchDarkLight = document.querySelector('.switch-dark-light');
 const extensionListTitle = document.querySelector('.extension-list-title');
 const toggles = document.querySelectorAll('.identifier');
 const cardDark = document.querySelectorAll('.card');
+const cardTitle = document.querySelector('.extension-name');
+const cardDescription = document.querySelector('.extension-description');
+const cardRemoveButton = document.querySelector('.extension-remove');
 
 function changeToDark(){
     body.classList.add('background-dark');
@@ -16,6 +19,9 @@ function changeToDark(){
     cardDark.forEach( el => {
         el.classList.add('card-dark');
     });
+    cardTitle.classList.add('h2-dark');
+    cardDescription.classList.add('p-dark');
+    cardRemoveButton.classList.add('button-remove-dark');
 }
 
 export { changeToDark };

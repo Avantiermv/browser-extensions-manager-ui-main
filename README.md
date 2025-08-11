@@ -8,7 +8,7 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
+- [Project Situation](#project-situation)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
@@ -31,13 +31,19 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-
 ### Links
 
-- Solution URL: [Solution Site](https://your-solution-url.com)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Solution URL: [Solution Site](https://github.com/Avantiermv/browser-extensions-manager-ui-main)
+- Live Site URL: [Live Site](https://avantiermv.github.io/browser-extensions-manager-ui-main/)
 
-## My process
+## Project Situation 
+Status: Building
+
+- [x] Cards - Dark Mode
+- [] Cards - Light Mode
+- [] Cards - Remove Button
+- [] Cards - Switch Inactive/Active
+- [] Toggles - Show Active, Inactive, All extensions
 
 ### Built with
 
@@ -46,6 +52,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- ES6 Modules 
 
 ### What I learned
 
@@ -55,6 +62,6 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Avantiermv](https://www.frontendmentor.io/profile/Avantiermv)
 
 

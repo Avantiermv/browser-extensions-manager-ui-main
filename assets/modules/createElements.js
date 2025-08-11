@@ -30,10 +30,24 @@ function createElements(extensionImage, extensionName, extensionDescription){
     extensionActionToggles.classList.add('extension-action-toggles');
     const buttonRemove = document.createElement('button');
     buttonRemove.classList.add('extension-remove');
-    const extensionSwtich = document.createElement('div');
-    extensionSwtich.classList.add('extension-switch');
+    buttonRemove.textContent = "Remove";
+    const extensionSwitch = document.createElement('div');
+    extensionSwitch.classList.add('extension-switch');
+
+    const labelSwitch = document.createElement('label');
+    labelSwitch.classList.add('switch');
+    const inputSwitch = document.createElement('input');
+    inputSwitch.type = 'checkbox';
+    const spanSwitch = document.createElement('span');
+    spanSwitch.classList.add('slider', 'round');
+
+    labelSwitch.appendChild(inputSwitch);
+    labelSwitch.appendChild(spanSwitch);
+
+    extensionSwitch.appendChild(labelSwitch);
+
     extensionActionToggles.appendChild(buttonRemove);
-    extensionActionToggles.appendChild(extensionSwtich);
+    extensionActionToggles.appendChild(extensionSwitch);
 
     card.appendChild(mainContent);
     card.appendChild(extensionActionToggles);

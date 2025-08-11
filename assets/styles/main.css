@@ -64,6 +64,7 @@ body{
 .switch-dark-light:hover{
   background-color: hsla(227, 14%, 55%, 0.267);
   cursor: pointer;
+  border:solid 1px var(--Red700);
 
   transition: 0.3s;
 }

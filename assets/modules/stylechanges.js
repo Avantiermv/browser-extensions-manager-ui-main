@@ -3,10 +3,6 @@ const header = document.querySelector('.header-image-switch');
 const switchDarkLight = document.querySelector('.switch-dark-light');
 const extensionListTitle = document.querySelector('.extension-list-title');
 const toggles = document.querySelectorAll('.identifier');
-const cardDark = document.querySelectorAll('.card');
-const cardTitle = document.querySelector('.extension-name');
-const cardDescription = document.querySelector('.extension-description');
-const cardRemoveButton = document.querySelector('.extension-remove');
 
 function changeToDark(){
     body.classList.add('background-dark');
@@ -16,12 +12,18 @@ function changeToDark(){
     toggles.forEach( el => {
         el.classList.add('identifier-dark');
     });
-    cardDark.forEach( el => {
+    document.querySelectorAll('.card').forEach( el => {
         el.classList.add('card-dark');
     });
-    cardTitle.classList.add('h2-dark');
-    cardDescription.classList.add('p-dark');
-    cardRemoveButton.classList.add('button-remove-dark');
+    document.querySelectorAll('.extension-name').forEach( el => {
+        el.classList.add('h2-dark')
+    });
+    document.querySelectorAll('.extension-description').forEach( el => {
+        el.classList.add('p-dark');
+    });
+    document.querySelectorAll('.extension-remove').forEach( el => {
+        el.classList.add('button-remove-dark');
+    });
 }
 
 export { changeToDark };

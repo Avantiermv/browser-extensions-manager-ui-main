@@ -1,9 +1,7 @@
 import { changeToDark } from "../modules/stylechanges.js";
 import { takeExtensionInfo } from "../modules/jsonLoader.js";
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    
+document.addEventListener('DOMContentLoaded', async () => {
+   await takeExtensionInfo('assets/scripts/data.json');
    changeToDark();
-   takeExtensionInfo('assets/scripts/data.json');
 });

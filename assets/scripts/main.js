@@ -1,4 +1,4 @@
-import { changeToDark } from "../modules/stylechanges.js";
+import { changeToDark, changeToLight } from "../modules/stylechanges.js";
 import { takeExtensionInfo } from "../modules/jsonLoader.js";
 
 document.addEventListener('DOMContentLoaded', async () => {

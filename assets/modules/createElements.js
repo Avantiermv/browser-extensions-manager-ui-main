@@ -1,3 +1,5 @@
+// import { changeToDark } from "./stylechanges";
+
 const extensions = document.querySelector('.extensions');
 
 function createElements(extensionImage, extensionName, extensionDescription){

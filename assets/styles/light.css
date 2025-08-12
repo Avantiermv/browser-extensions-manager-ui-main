@@ -1,1 +1,53 @@
 @import url('main.css');
+
+/* BODY */
+.background-light{
+    background: var(--LightGradient);
+}
+
+/* header */
+.header-light{
+    background-color: var(--Neutral0);
+}
+
+.svg-dark path[fill="#ffffff"] {
+  fill: hsl(227, 75%, 14%);
+}
+
+.switch-dark-light-when-light{
+    background-color: hsla(0, 0%, 78%, 0.451)
+}
+
+/* list change */
+.h1-light{
+    color: var(--Neutral900);
+}
+
+.identifier-light{
+    background-color: var(--Neutral0); 
+    color: var(--Neutral900);
+    border: solid 1px var(--Neutral700);
+}
+
+/* CARDS */
+.card-light{
+    background-color: var(--Neutral0); 
+}
+
+.h2-light{
+    color: var(--Neutral700);
+}
+
+.p-light{
+    color: var(--Neutral600);
+}
+
+.button-remove-light{
+    background-color: var(--Neutral0);
+    color: var(--Neutral700);
+
+    border: solid 1px var(--Neutral700);
+}
+      
+
+

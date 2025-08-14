@@ -40,7 +40,7 @@ Users should be able to:
 Status: Building
 
 - [x] Cards - Dark Mode
-- [] Cards - Light Mode
+- [X] Cards - Light Mode
 - [] Cards - Remove Button
 - [] Cards - Switch Inactive/Active
 - [] Toggles - Show Active, Inactive, All extensions

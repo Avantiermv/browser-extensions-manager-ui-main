@@ -3,11 +3,16 @@
 /* BODY */
 .background-light{
     background: var(--LightGradient);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
 }
 
 /* header */
 .header-light{
     background-color: var(--Neutral0);
+    transition: 0.3s;
 }
 
 .svg-dark path[fill="#ffffff"] {
@@ -15,31 +20,37 @@
 }
 
 .switch-dark-light-when-light{
-    background-color: hsla(0, 0%, 78%, 0.451)
+    background-color: hsla(0, 0%, 78%, 0.451);
+    transition: 0.3s;
 }
 
 /* list change */
 .h1-light{
     color: var(--Neutral900);
+    transition: 0.3s;
 }
 
 .identifier-light{
     background-color: var(--Neutral0); 
     color: var(--Neutral900);
     border: solid 1px var(--Neutral700);
+    transition: 0.3s;
 }
 
 /* CARDS */
 .card-light{
     background-color: var(--Neutral0); 
+    transition: 0.3s;
 }
 
 .h2-light{
     color: var(--Neutral700);
+    transition: 0.3s;
 }
 
 .p-light{
     color: var(--Neutral600);
+    transition: 0.3s;
 }
 
 .button-remove-light{
@@ -47,6 +58,15 @@
     color: var(--Neutral700);
 
     border: solid 1px var(--Neutral700);
+    transition: 0.3s;
+}
+
+.button-remove-light:hover{
+    background-color: var(--Neutral300);
+    border:solid 1px var(--Red700);
+
+    cursor: pointer;
+    transition: 0.3s;
 }
       
 

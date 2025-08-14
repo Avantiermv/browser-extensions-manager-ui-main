@@ -46,31 +46,22 @@
     padding: 8px;
 
     border-radius: 12px;
-}
-
-.extension-remove:hover{
-    background-color: var(--Neutral600);
-    border:solid 1px var(--Red700);
-
-    cursor: pointer;
-    transition: 0.3s;
+    border: none;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 45px;  /* Reduzido de 60px para 45px (-15px) */
-  height: 19px; /* Reduzido de 34px para 19px (-15px) */
+  width: 45px;  
+  height: 19px; 
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -85,10 +76,10 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 15px; /* Reduzido de 26px para 15px (proporção) */
-  width: 15px;  /* Reduzido de 26px para 15px (proporção) */
-  left: 2px;    /* Ajustado de 4px para 2px (proporção) */
-  bottom: 2px;  /* Ajustado de 4px para 2px (proporção) */
+  height: 15px; 
+  width: 15px;  
+  left: 2px;    
+  bottom: 2px;  
   background-color: white;
   transition: .4s;
 }
@@ -102,12 +93,11 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px); /* Ajustado de 26px para 26px? */
+  transform: translateX(26px); 
 }
 
-/* Rounded sliders */
 .slider.round {
-  border-radius: 19px; /* Ajustado de 34px para 19px (nova altura) */
+  border-radius: 19px;
 }
 
 .slider.round:before {

@@ -3,6 +3,9 @@
 /* BODY */
 .background-dark{
     background: var(--DarkGradient);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /* header */
@@ -43,6 +46,14 @@
     color: var(--Neutral0);
 
     border: solid 1px var(--Neutral0);
+}
+
+.button-remove-dark:hover{
+    background-color: var(--Neutral600);
+    border:solid 1px var(--Red700);
+
+    cursor: pointer;
+    transition: 0.3s;
 }
       
 

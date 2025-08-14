@@ -30,7 +30,8 @@
 
 body{
   font-family: var(--font);
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 }
 
 /* Header */
@@ -92,6 +93,7 @@ body{
 
 input[type="checkbox"]{
   clip-path: inset(50%);
+  position: absolute;
 }
 
 .identifier{
@@ -116,6 +118,10 @@ input[type="checkbox"]{
 
 .extensions{
   display: grid;
+}
+
+.transition-class{
+  transition: 0.3s;
 }
 
 

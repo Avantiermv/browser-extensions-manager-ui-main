@@ -10,8 +10,6 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
   - [Links](#links)
 - [Project Situation](#project-situation)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
 - [Author](#author)
 
 ## Overview
@@ -39,11 +37,11 @@ Users should be able to:
 ## Project Situation 
 Status: Building
 
-- [x] Cards - Dark Mode
-- [X] Cards - Light Mode
-- [] Cards - Remove Button
-- [] Cards - Switch Inactive/Active
-- [] Toggles - Show Active, Inactive, All extensions
+- [x] Cards - Dark Mode - Style
+- [X] Cards - Light Mode - Style
+- [] Cards - Remove Button - Logic
+- [] Cards - Switch Inactive/Active - Logic
+- [] Toggles - Show Active, Inactive, All extensions - Logic
 
 ### Built with
 
@@ -53,12 +51,6 @@ Status: Building
 - CSS Grid
 - Mobile-first workflow
 - ES6 Modules 
-
-### What I learned
-
-
-### Continued development
-
 
 ## Author
 

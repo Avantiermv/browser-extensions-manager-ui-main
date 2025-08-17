@@ -1,3 +1,6 @@
+import { extensionRemoveButton } from "./extensionsLogic.js";
+import { allExtensions } from "./jsonLoader.js";
+
 const extensions = document.querySelector('.extensions');
 
 function createElements(extensionImage, extensionName, extensionDescription){
@@ -31,6 +34,10 @@ function createElements(extensionImage, extensionName, extensionDescription){
     const buttonRemove = document.createElement('button');
     buttonRemove.classList.add('extension-remove');
     buttonRemove.textContent = "Remove";
+    buttonRemove.addEventListener('click', () => {
+        extensionRemoveButton(allExtensions);
+    });
+
     const extensionSwitch = document.createElement('div');
     extensionSwitch.classList.add('extension-switch');
 

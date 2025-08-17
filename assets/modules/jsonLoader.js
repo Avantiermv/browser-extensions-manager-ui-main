@@ -1,8 +1,8 @@
 import { createElements } from "./createElements.js";
 
-let allExtensiosn =[];
-let activeExtensions = [];
-let inactiveExtensions = [];
+export let allExtensions =[];
+export let activeExtensions = [];
+export let inactiveExtensions = [];
 
 async function takeExtensionInfo(url) {
     try{
@@ -11,7 +11,7 @@ async function takeExtensionInfo(url) {
         data.forEach(extension => {
             createElements(extension.logo, extension.name, extension.description);
             if(extension){
-                allExtensiosn.push(extension);
+                allExtensions.push(extension);
             }
             if(extension.isActive){
                 activeExtensions.push(extension);
@@ -19,9 +19,6 @@ async function takeExtensionInfo(url) {
                 inactiveExtensions.push(extension);
             }
         });
-        console.log(allExtensiosn);
-        console.log(activeExtensions);
-        console.log(inactiveExtensions);
     }catch(e){
         console.error("ERROR: ", e);
     }

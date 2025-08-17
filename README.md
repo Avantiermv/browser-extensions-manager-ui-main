@@ -29,7 +29,6 @@ Users should be able to:
 
 ![](./assets/images/darkmode.png)
 
-
 ### Links
 
 - Solution URL: [Solution Site](https://github.com/Avantiermv/browser-extensions-manager-ui-main)

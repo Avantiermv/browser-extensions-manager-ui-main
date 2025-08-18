@@ -1,6 +1,10 @@
 @import url('main.css');
 
 .card{
+  display: flex;
+  flex-flow: column  nowrap;
+  justify-content: space-between;
+
     padding: 5px;
     margin: 10px;
 
@@ -47,6 +51,11 @@
 
     border-radius: 12px;
     border: none;
+}
+
+.extension-switch{
+  display: flex;
+  align-items: center;
 }
 
 .switch {

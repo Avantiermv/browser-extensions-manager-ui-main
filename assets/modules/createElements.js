@@ -1,26 +1,25 @@
-import { extensionRemoveButton } from "./extensionsLogic.js";
-import { allExtensions } from "./jsonLoader.js";
+import { extensionRemoveButton, isActive } from "./extensionsLogic.js";
 
 const extensions = document.querySelector('.extensions');
 
-function createElements(extensionImage, extensionName, extensionDescription){
+function createElements(extension){
     const card = document.createElement('div');
     card.classList.add('card');
 
     const extensionIconImage = document.createElement('div');
     extensionIconImage.classList.add('extension-icon-image');
     const img = document.createElement('img');
-    img.src = extensionImage;
+    img.src = extension.logo;
     extensionIconImage.appendChild(img);
 
     const extensionInfo = document.createElement('div');
     extensionInfo.classList.add('extension-info');
     const h2 = document.createElement('h2');
     h2.classList.add('extension-name');
-    h2.innerText = extensionName;
+    h2.innerText = extension.name;
     const p = document.createElement('p');
     p.classList.add('extension-description');
-    p.innerText = extensionDescription;
+    p.innerText = extension.description;
     extensionInfo.appendChild(h2);
     extensionInfo.appendChild(p);
 
@@ -34,8 +33,8 @@ function createElements(extensionImage, extensionName, extensionDescription){
     const buttonRemove = document.createElement('button');
     buttonRemove.classList.add('extension-remove');
     buttonRemove.textContent = "Remove";
-    buttonRemove.addEventListener('click', () => {
-        extensionRemoveButton(allExtensions);
+    buttonRemove.addEventListener('click', (event) =>{
+        extensionRemoveButton(event.target);
     });
 
     const extensionSwitch = document.createElement('div');
@@ -45,6 +44,16 @@ function createElements(extensionImage, extensionName, extensionDescription){
     labelSwitch.classList.add('switch');
     const inputSwitch = document.createElement('input');
     inputSwitch.type = 'checkbox';
+    inputSwitch.className = 'extension-input-switch';
+    
+    if(extension.isActive){
+        inputSwitch.checked = true;
+    }
+
+    inputSwitch.addEventListener('change', () => {
+        isActive(extension);
+    });
+
     const spanSwitch = document.createElement('span');
     spanSwitch.classList.add('slider', 'round');
 

@@ -9,7 +9,7 @@ async function takeExtensionInfo(url) {
         const reponse = await fetch(url);
         const data = await reponse.json();
         data.forEach(extension => {
-            createElements(extension.logo, extension.name, extension.description);
+            createElements(extension);
             if(extension){
                 allExtensions.push(extension);
             }

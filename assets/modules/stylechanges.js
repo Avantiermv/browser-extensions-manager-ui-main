@@ -80,7 +80,6 @@ function updateDynamicElements() {
     elements.extensionRemoveButtons = document.querySelectorAll('.extension-remove');
 }
 
-
 function changeToDark(){
     updateDynamicElements();
 

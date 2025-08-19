@@ -1,8 +1,6 @@
 import { createElements } from "./createElements.js";
 
-export let allExtensions =[];
-export let activeExtensions = [];
-export let inactiveExtensions = [];
+export let allExtensions = [];
 
 async function takeExtensionInfo(url) {
     try{
@@ -12,11 +10,6 @@ async function takeExtensionInfo(url) {
             createElements(extension);
             if(extension){
                 allExtensions.push(extension);
-            }
-            if(extension.isActive){
-                activeExtensions.push(extension);
-            }else{
-                inactiveExtensions.push(extension);
             }
         });
     }catch(e){

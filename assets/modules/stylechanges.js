@@ -128,10 +128,25 @@ function changeToLight(){
     iconOfSwitch.src = 'assets/images/icon-moon.svg';
 }
 
-function applyTransition(elements){
-    elements.forEach(el => {
+function applyTransition(){
+    
+
+    const allElements = [
+        body,
+        header,
+        switchDarkLight,
+        extensionListTitle,
+        ...toggles,
+        ...elements.cards,
+        ...elements.extensionName,
+        ...elements.extensionDescription,
+        ...elements.extensionRemoveButtons
+    ];
+
+    allElements.forEach(el => {
         el.classList.add('transition-class');
-    })
+    });
+    updateDynamicElements();
 }
 
 switchDarkLightLabel.addEventListener('click', () => {
@@ -143,18 +158,5 @@ switchDarkLightLabel.addEventListener('click', () => {
 });
 export function changeMode(){
     changeToDark();
-    applyTransition([
-        body,
-        header,
-        switchDarkLight,
-        extensionListTitle,
-        ...toggles,
-        ...elements.cards,
-        ...elements.extensionName,
-        ...elements.extensionDescription,
-        ...elements.extensionRemoveButtons
-    ]);
+    applyTransition();
 };
-
-
- 

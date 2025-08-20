@@ -6,7 +6,9 @@ async function takeExtensionInfo(url) {
     try{
         const reponse = await fetch(url);
         const data = await reponse.json();
-        data.forEach(extension => {
+        data.forEach((extension, index)=> {
+            extension.id = index + 1;
+
             createElements(extension);
             if(extension){
                 allExtensions.push(extension);
@@ -18,8 +20,3 @@ async function takeExtensionInfo(url) {
 }
 
 export { takeExtensionInfo };
-
-
-
-
-

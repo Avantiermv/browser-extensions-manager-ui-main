@@ -5,6 +5,7 @@ const extensions = document.querySelector('.extensions');
 function createElements(extension){
     const card = document.createElement('div');
     card.classList.add('card');
+    card.dataset.id = extension.id;
 
     const extensionIconImage = document.createElement('div');
     extensionIconImage.classList.add('extension-icon-image');

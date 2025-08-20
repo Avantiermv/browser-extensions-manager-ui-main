@@ -10,6 +10,7 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
   - [Links](#links)
 - [Project Situation](#project-situation)
   - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 - [Author](#author)
 
 ## Overview
@@ -35,13 +36,12 @@ Users should be able to:
 - Live Site URL: [Live Site](https://avantiermv.github.io/browser-extensions-manager-ui-main/)
 
 ## Project Situation 
-Status: Building
 
 - [x] Cards - Dark Mode - Style
-- [X] Cards - Light Mode - Style
-- [] Cards - Remove Button - Logic
-- [] Cards - Switch Inactive/Active - Logic
-- [] Toggles - Show Active, Inactive, All extensions - Logic
+- [x] Cards - Light Mode - Style
+- [x] Cards - Remove Button - Logic
+- [x] Cards - Switch Inactive/Active - Logic
+- [x] Toggles - Show Active, Inactive, All extensions - Logic
 
 ### Built with
 
@@ -51,6 +51,9 @@ Status: Building
 - CSS Grid
 - Mobile-first workflow
 - ES6 Modules 
+
+### What I learned
+In this challenge, I focused on learning how to use the terminal more for commits, using modules, and changing themes, such as dark mode and light mode.
 
 ## Author
 

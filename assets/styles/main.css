@@ -116,7 +116,7 @@ input[type="checkbox"]{
 }
 
 .identifier:hover{
-  background-color: var(--Red400);
+  background-color: var(--Red700);
   color: var(--Neutral900);
 
   font-weight: bold;
@@ -127,7 +127,7 @@ input[type="checkbox"]{
 }
 
 .transition-class{
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 @media screen and (min-width: 725px){

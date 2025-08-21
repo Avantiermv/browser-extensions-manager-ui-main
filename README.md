@@ -58,5 +58,6 @@ In this challenge, I focused on learning how to use the terminal more for commit
 ## Author
 
 - Frontend Mentor - [@Avantiermv](https://www.frontendmentor.io/profile/Avantiermv)
+- E-mail - [marcosvinicius](marcosviniciussilvacolares@gmail.com)
 
 
